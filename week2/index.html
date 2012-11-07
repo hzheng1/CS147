@@ -13,7 +13,9 @@
 	</head>
 
 	<body>
-			<!-- This is the top bit with the image. 
+	<style>
+	
+	</style>		<!-- This is the top bit with the image. 
 		I wonder why there's no image tag here? -->
 		<div class="whitebit"></div>
 
@@ -23,7 +25,11 @@
 			<div id="button">Refresh GPS: <div id="timer"></div></div>
 
 			<div class="area">
+<<<<<<< HEAD
 				<div class="box box1"><div class="latitude">blah</div></div>
+=======
+				<div class="box box1"><div class="latitude">Blah</div></div>
+>>>>>>> 2f422484d7577b6a4a4f9cbd0e0d550176ccef8e
 				<div class="box box2"><div class="longitude"></div></div>
 			</div>
 
@@ -33,6 +39,21 @@
 		<script type="text/javascript">
 		var count = 30;
 		var counter = setInterval(timer, 1000); 
+<<<<<<< HEAD
+=======
+		
+		function timer() {
+		    count = count - 1;
+		    if (count <= 0) {
+		        clearInterval(counter);
+		        alert("Boom!");
+		        document.getElementById('button').style.visibility = 'hidden';
+		        return;
+		    }
+		
+		    document.getElementById("timer").innerHTML = count + " secs";
+		}
+>>>>>>> 2f422484d7577b6a4a4f9cbd0e0d550176ccef8e
 
 		function timer() 
 		{
@@ -51,6 +72,7 @@
 		<!-- Let's put in the geolocation stuff here -->
 		<script type="text/javascript">
 		$(function () {
+<<<<<<< HEAD
 			getLocation();
 			$("#button").click(function () {
 				getLocation();
@@ -58,6 +80,14 @@
 		});
 		
 		function getLocation() {
+=======
+    $("#button").click(function () {
+        getLocation();
+    });
+});
+
+function getLocation() {
+>>>>>>> 2f422484d7577b6a4a4f9cbd0e0d550176ccef8e
     if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -65,10 +95,19 @@
     }
 }
 
+<<<<<<< HEAD
 	function showPosition(position) {
 		$(".box1").html(position.coords.latitude);
 		$(".box2").html(position.coords.longitude);
 		}
+=======
+function showPosition(position) {
+    $(".box1").html(position.coords.latitude);
+    $(".box2").html(position.coords.longitude);
+} 
+
+getLocation();
+>>>>>>> 2f422484d7577b6a4a4f9cbd0e0d550176ccef8e
 		</script>
 	</body>
 </html>
